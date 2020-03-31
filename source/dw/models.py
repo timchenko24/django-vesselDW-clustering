@@ -9,3 +9,8 @@ class VesselType(models.Model):
 class VesselBuild(models.Model):
     id = models.UUIDField(primary_key=True, null=False, unique=True)
     year = models.IntegerField(null=False)
+
+
+class VesselFlag(models.Model):
+    id = models.UUIDField(primary_key=True, null=False, unique=True)
+    flag = models.CharField(max_length=50, null=False)
