@@ -28,3 +28,8 @@ class Vessel(models.Model):
     width = models.IntegerField()
     grt = models.IntegerField()
     dwt = models.IntegerField()
+
+
+class PortCountry(models.Model):
+    id = models.UUIDField(primary_key=True, null=False, unique=True)
+    name = models.CharField(max_length=50, null=False)
