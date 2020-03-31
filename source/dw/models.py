@@ -59,3 +59,20 @@ class Date(models.Model):
     month = models.IntegerField(null=False)
     quarter = models.IntegerField(null=False)
     year = models.IntegerField(null=False)
+
+
+class Voyage(models.Model):
+    id = models.UUIDField(primary_key=True, null=False, unique=True)
+    route = models.ForeignKey(Route, on_delete=models.PROTECT, null=False)
+    mmsi = models.ForeignKey(Vessel, on_delete=models.PROTECT, null=False)
+    departure_date = models.ForeignKey(Date, on_delete=models.PROTECT, null=False, related_name='dep_date')
+    arrival_date = models.ForeignKey(Date, on_delete=models.PROTECT, null=False, related_name='arr_date')
+    time_in_port = models.IntegerField(null=False)
+    fuel_costs = models.IntegerField(null=False)
+    crew_costs = models.IntegerField(null=False)
+    port_charges = models.IntegerField(null=False)
+    insurance_costs = models.IntegerField(null=False)
+    total_costs = models.IntegerField(null=False)
+    cargo_income = models.IntegerField(null=False)
+    net_total_freight = models.IntegerField(null=False)
+    voyage_profit = models.IntegerField(null=False)
