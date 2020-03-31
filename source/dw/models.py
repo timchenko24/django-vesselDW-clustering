@@ -42,3 +42,9 @@ class Port(models.Model):
     type = models.CharField(max_length=15, null=False)
     longitude = models.DecimalField(max_digits=8, decimal_places=5, null=False)
     latitude = models.DecimalField(max_digits=8, decimal_places=5, null=False)
+
+
+class Route(models.Model):
+    id = models.UUIDField(primary_key=True, null=False, unique=True)
+    departure_port = models.ForeignKey(Port, on_delete=models.PROTECT, null=False, related_name='dep_port')
+    destination_port = models.ForeignKey(Port, on_delete=models.PROTECT, null=False, related_name='dest_port')
