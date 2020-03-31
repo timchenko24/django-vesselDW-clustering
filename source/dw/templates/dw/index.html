@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vessels Data Warehouse</title>
+</head>
+<body>
+    <h1>Vessels</h1>
+    {% for v in vessels %}
+        <div>
+            <h2>{{ v.mmsi }}</h2>
+            <p>{{ v.name }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
