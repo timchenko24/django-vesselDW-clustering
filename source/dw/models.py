@@ -4,3 +4,8 @@ from django.db import models
 class VesselType(models.Model):
     id = models.UUIDField(primary_key=True, null=False, unique=True)
     type = models.CharField(max_length=50, null=False)
+
+
+class VesselBuild(models.Model):
+    id = models.UUIDField(primary_key=True, null=False, unique=True)
+    year = models.IntegerField(null=False)
