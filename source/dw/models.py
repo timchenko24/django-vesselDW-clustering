@@ -48,3 +48,14 @@ class Route(models.Model):
     id = models.UUIDField(primary_key=True, null=False, unique=True)
     departure_port = models.ForeignKey(Port, on_delete=models.PROTECT, null=False, related_name='dep_port')
     destination_port = models.ForeignKey(Port, on_delete=models.PROTECT, null=False, related_name='dest_port')
+
+
+class Date(models.Model):
+    id = models.UUIDField(primary_key=True, null=False, unique=True)
+    minute = models.IntegerField(null=False)
+    hour = models.IntegerField(null=False)
+    weekday = models.CharField(max_length=15, null=False)
+    day = models.IntegerField(null=False)
+    month = models.IntegerField(null=False)
+    quarter = models.IntegerField(null=False)
+    year = models.IntegerField(null=False)
