@@ -2,3 +2,7 @@
 source/source/__pycache__/
 
 source/.idea/
+
+source/dw/__pycache__/
+
+source/dw/migrations/__pycache__/
