@@ -125,9 +125,9 @@ class Voyage(models.Model):
     route = models.ForeignKey(Route, on_delete=models.PROTECT, null=False, verbose_name='Маршрут')
     mmsi = models.ForeignKey(Vessel, on_delete=models.PROTECT, null=False, verbose_name='MMSI')
     departure_date = models.ForeignKey(Date, on_delete=models.PROTECT, null=False, related_name='dep_date',
-                                       verbose_name='Порт отправления')
+                                       verbose_name='Дата отправления')
     arrival_date = models.ForeignKey(Date, on_delete=models.PROTECT, null=False, related_name='arr_date',
-                                     verbose_name='Порт назначения')
+                                     verbose_name='Дата прибытия')
     time_in_port = models.IntegerField(null=False, verbose_name='Время в порту')
     fuel_costs = models.IntegerField(null=False, verbose_name='Затраты на топливо')
     crew_costs = models.IntegerField(null=False, verbose_name='Затраты на экипаж')
