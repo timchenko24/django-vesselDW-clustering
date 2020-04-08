@@ -19,7 +19,7 @@ class VesselBuild(models.Model):
     year = models.IntegerField(null=False, verbose_name='Год')
 
     def __str__(self):
-        return self.year
+        return str(self.year)
 
     class Meta:
         verbose_name_plural = 'Года постройки судов'
