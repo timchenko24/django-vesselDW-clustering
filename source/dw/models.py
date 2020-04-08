@@ -6,6 +6,9 @@ class VesselType(models.Model):
     id = models.UUIDField(primary_key=True, null=False, unique=True)
     type = models.CharField(max_length=50, null=False, verbose_name='Тип')
 
+    def __str__(self):
+        return self.type
+
     class Meta:
         verbose_name_plural = 'Типы судов'
         verbose_name = 'Тип судна'
@@ -15,6 +18,9 @@ class VesselBuild(models.Model):
     id = models.UUIDField(primary_key=True, null=False, unique=True)
     year = models.IntegerField(null=False, verbose_name='Год')
 
+    def __str__(self):
+        return self.year
+
     class Meta:
         verbose_name_plural = 'Года постройки судов'
         verbose_name = 'Год постройки судна'
@@ -23,6 +29,9 @@ class VesselBuild(models.Model):
 class VesselFlag(models.Model):
     id = models.UUIDField(primary_key=True, null=False, unique=True)
     flag = models.CharField(max_length=50, null=False, verbose_name='Флаг')
+
+    def __str__(self):
+        return self.flag
 
     class Meta:
         verbose_name_plural = 'Флаги судов'
@@ -42,6 +51,9 @@ class Vessel(models.Model):
     grt = models.IntegerField(verbose_name='Грузоподъемность')
     dwt = models.IntegerField(verbose_name='Дедвейт')
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name_plural = 'Суда'
         verbose_name = 'Судно'
@@ -50,6 +62,9 @@ class Vessel(models.Model):
 class PortCountry(models.Model):
     id = models.UUIDField(primary_key=True, null=False, unique=True)
     name = models.CharField(max_length=50, null=False, verbose_name='Название')
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name_plural = 'Страны портов'
@@ -64,6 +79,9 @@ class Port(models.Model):
     longitude = models.DecimalField(max_digits=8, decimal_places=5, null=False, verbose_name='Долгота')
     latitude = models.DecimalField(max_digits=8, decimal_places=5, null=False, verbose_name='Широта')
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name_plural = 'Порты'
         verbose_name = 'Порт'
@@ -75,6 +93,9 @@ class Route(models.Model):
                                        verbose_name='Порт отправления')
     destination_port = models.ForeignKey(Port, on_delete=models.PROTECT, null=False, related_name='dest_port',
                                          verbose_name='Порт назначения')
+
+    def __str__(self):
+        return '{0} - {1}'.format(self.departure_port, self.destination_port)
 
     class Meta:
         verbose_name_plural = 'Маршруты'
@@ -90,6 +111,9 @@ class Date(models.Model):
     month = models.IntegerField(null=False, verbose_name='Месяц')
     quarter = models.IntegerField(null=False, verbose_name='Квартал')
     year = models.IntegerField(null=False, verbose_name='Год')
+
+    def __str__(self):
+        return '{0}:{1} {2}.{3}.{4}'.format(self.hour, self.minute, self.day, self.month, self.year)
 
     class Meta:
         verbose_name_plural = 'Времена и даты'
