@@ -5,7 +5,9 @@ from .models import *
 # Create your views here.
 def index(request):
     vessels = Vessel.objects.all()
-    return render(request, 'dw/index.html', {'vessels': vessels})
+    types = VesselType.objects.all()
+    context = {'vessels': vessels, 'types': types}
+    return render(request, 'dw/index.html', context)
 
 
 def by_vesselType(request, type_id):
