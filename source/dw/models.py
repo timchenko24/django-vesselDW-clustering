@@ -61,14 +61,14 @@ class Vessel(models.Model):
 
 class PortCountry(models.Model):
     id = models.UUIDField(primary_key=True, null=False, unique=True)
-    name = models.CharField(max_length=50, null=False, verbose_name='Название')
+    name = models.CharField(max_length=50, null=False, verbose_name='Страна')
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'Страны портов'
-        verbose_name = 'Страна порта'
+        verbose_name_plural = 'Страны'
+        verbose_name = 'Страна'
 
 
 class Port(models.Model):
