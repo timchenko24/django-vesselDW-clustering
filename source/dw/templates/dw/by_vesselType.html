@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ current_type.type }}</title>
+</head>
+<body>
+    <h1>Суда</h1>
+    <h2>Тип судна: {{ current_type.type }}</h2>
+    <div>
+        <a href="/dw/">Главная</a>
+        {% for type in types %}
+            <a href="/dw/{{ type.pk }}/">{{ type.type }}</a>
+        {% endfor %}
+    </div>
+    {% for v in vessels %}
+        <div>
+            <h2>{{ v.mmsi }}</h2>
+            <p>{{ v.name }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
