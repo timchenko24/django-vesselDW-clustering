@@ -3,6 +3,6 @@ from .views import index, by_vesselType
 
 
 urlpatterns = [
-    path('<int:type_id>', by_vesselType),
-    path('', index)
+    path('<uuid:type_id>/', by_vesselType, name='by_vesselType'),
+    path('', index, name='index'),
 ]
