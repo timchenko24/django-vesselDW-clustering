@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ current_type.type }}</title>
-</head>
-<body>
+{% extends "layout/basic.html" %}
+
+{% block content %}
     <h1>Суда</h1>
     <h2>Тип судна: {{ current_type.type }}</h2>
     <div>
@@ -19,5 +15,4 @@
             <p>{{ v.name }}</p>
         </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
