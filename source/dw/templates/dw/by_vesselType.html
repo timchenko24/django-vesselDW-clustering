@@ -2,19 +2,17 @@
 
 {% block content %}
     <h1>Суда</h1>
+    <h2>Тип судна: {{ current_type.type }}</h2>
     <div>
         <a href="{% url 'index' %}">Главная</a>
         {% for type in types %}
-            <a href="{% url 'by_vesselType' type.pk %}">{{ type.type }}</a>
+            <a href="{% url 'by_vesselType' type.id %}">{{ type.type }}</a>
         {% endfor %}
     </div>
     {% for v in vessels %}
         <div>
             <h2>{{ v.mmsi }}</h2>
             <p>{{ v.name }}</p>
-            <p>
-                <a href="{% url 'by_vesselType' v.type.pk %}">{{ v.type.type }}</a>
-            </p>
         </div>
     {% endfor %}
 {% endblock %}
