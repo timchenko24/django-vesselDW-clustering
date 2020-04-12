@@ -1,19 +1,35 @@
+{% load bootstrap4 %}
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}Главная{% endblock %} - Рейсы</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='slim' %}
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static "dw/basic.css" %}">
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'dw/navbar.css' %}">
 </head>
 <body>
-    <nav>
-        <a href="{% url 'index' %}">Главная</a>
-    </nav>
-    <section>
-        {% block content %}
-        {% endblock %}
-    </section>
+    {% include 'layout/navbar.html' %}
+
+    <div class="container py-5">
+        <div class="jumbotron text-white jumbotron-image shadow">
+            <h2 class="mb-4">
+                Jumbotron with background image
+            </h2>
+            <p class="mb-4">
+                Hey, check this out.
+            </p>
+            <a href="https://bootstrapious.com/snippets" class="btn btn-primary">More Bootstrap Snippets</a>
+        </div>
+    </div>
+
+    {% block content %}
+
+    {% endblock %}
 </body>
 </html>
