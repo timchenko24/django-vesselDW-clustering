@@ -10,3 +10,37 @@ body {
     background-color: #ffffff;
     background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
 }
+
+span{
+    font-size:15px;
+}
+
+.box a{
+  text-decoration:none;
+  color: #0062cc;
+  border-bottom:2px solid #0062cc;
+}
+
+.box{
+    padding:60px 0px;
+}
+
+.box-part{
+    background:#FFF;
+    border-radius:0;
+    padding:60px 10px;
+    margin:30px 0px;
+    box-shadow: black;
+}
+
+.box-part:hover{
+    box-shadow: 0 0 6px #3c6a9f;
+}
+
+.text{
+    margin:20px 0px;
+}
+
+.fa{
+     color:#4183D7;
+}
