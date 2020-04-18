@@ -4,7 +4,7 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    return render(request, 'layout/basic.html')
+    return render(request, 'dw/index.html')
 
 
 def vessels_index(request):
