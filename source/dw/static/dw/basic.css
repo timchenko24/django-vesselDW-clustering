@@ -44,3 +44,13 @@ span{
 .fa{
      color:#4183D7;
 }
+
+.hr-div{
+    border: 0;
+    height: 2px;
+    width: 80%;
+    background-image: -webkit-linear-gradient(left, #dce5ee, #9cadc0, #f1f5f8);
+    background-image: -moz-linear-gradient(left, #dce5ee, #9cadc0, #f1f5f8);
+    background-image: -ms-linear-gradient(left, #dce5ee, #9cadc0, #f1f5f8);
+    background-image: -o-linear-gradient(left, #dce5ee, #9cadc0, #f1f5f8);
+}
