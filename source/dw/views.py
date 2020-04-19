@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from django.template import TemplateDoesNotExist
 from django.template.loader import get_template
+from django.contrib.auth.views import LoginView
 from .models import *
 
 # Create your views here.
@@ -16,6 +17,9 @@ def other_page(request, page):
         raise Http404
     return HttpResponse(template.render(request=request))
 
+
+class MainLoginView(LoginView):
+    template_name = 'dw/login.html'
 
 
 def vessels_index(request):
