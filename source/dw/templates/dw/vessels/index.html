@@ -1,0 +1,20 @@
+{% extends 'layout/basic.html' %}
+
+{% block content %}
+    <h1>Суда</h1>
+    <div>
+        <a href="{% url 'vessels_index' %}">Главная</a>
+        {% for type in types %}
+            <a href="{% url 'by_type' type.pk %}">{{ type.type }}</a>
+        {% endfor %}
+    </div>
+    {% for v in vessels %}
+        <div>
+            <h2>{{ v.mmsi }}</h2>
+            <p>{{ v.name }}</p>
+            <p>
+                <a href="{% url 'by_type' v.type.pk %}">{{ v.type.type }}</a>
+            </p>
+        </div>
+    {% endfor %}
+{% endblock %}
