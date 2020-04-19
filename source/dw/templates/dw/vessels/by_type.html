@@ -4,9 +4,9 @@
     <h1>Суда</h1>
     <h2>Тип судна: {{ current_type.type }}</h2>
     <div>
-        <a href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'vessels_index' %}">Главная</a>
         {% for type in types %}
-            <a href="{% url 'by_vesselType' type.id %}">{{ type.type }}</a>
+            <a href="{% url 'by_type' type.id %}">{{ type.type }}</a>
         {% endfor %}
     </div>
     {% for v in vessels %}

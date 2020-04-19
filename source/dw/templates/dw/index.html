@@ -1,20 +1,67 @@
-{% extends "layout/basic.html" %}
+{% extends 'layout/basic.html' %}
 
 {% block content %}
-    <h1>Суда</h1>
-    <div>
-        <a href="{% url 'index' %}">Главная</a>
-        {% for type in types %}
-            <a href="{% url 'by_vesselType' type.pk %}">{{ type.type }}</a>
-        {% endfor %}
+<div class="container py-5">
+    <div class="jumbotron text-white jumbotron-image shadow">
+        <h2 class="mb-4">
+            Информационно-аналитическая система<br>интеллектуального анализа данных<br>о Рейсах судов
+        </h2>
+        <a href="https://bootstrapious.com/snippets" class="btn btn-primary">О системе</a>
     </div>
-    {% for v in vessels %}
-        <div>
-            <h2>{{ v.mmsi }}</h2>
-            <p>{{ v.name }}</p>
-            <p>
-                <a href="{% url 'by_vesselType' v.type.pk %}">{{ v.type.type }}</a>
-            </p>
-        </div>
-    {% endfor %}
+</div>
+    <hr class="hr-div">
+<div class="box">
+    <div class="container">
+     	<div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="box-part text-center">
+                    <i class="fas fa-ship fa-3x"></i>
+                    <div class="title mt-3">
+                        <h4>Суда</h4>
+                    </div>
+                    <div class="text">
+                        <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
+                    </div>
+                    <a href="{% url 'vessels_index' %}">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="box-part text-center">
+                    <i class="fas fa-anchor fa-3x"></i>
+                    <div class="title mt-3">
+                        <h4>Порты</h4>
+                    </div>
+                    <div class="text">
+                        <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
+                    </div>
+                    <a href="#">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="box-part text-center">
+                    <i class="far fa-compass fa-3x"></i>
+                    <div class="title mt-3">
+                        <h4>Маршруты</h4>
+                    </div>
+                    <div class="text">
+                        <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
+                    </div>
+                    <a href="#">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="box-part text-center">
+                    <i class="fas fa-dharmachakra fa-3x"></i>
+                    <div class="title mt-3">
+                        <h4>Рейсы</h4>
+                    </div>
+                    <div class="text">
+                        <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
+                    </div>
+                    <a href="#">Подробнее</a>
+                </div>
+            </div>
+		</div>
+    </div>
+</div>
 {% endblock %}
