@@ -1,5 +1,6 @@
 {% extends 'layout/basic.html' %}
 {% load static %}
+{% block title %}Вход{% endblock %}
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'dw/login.css' %}">
 {% endblock %}
@@ -8,19 +9,17 @@
     <div class="container login-container">
             <div class="row justify-content-center">
                 <div class="col-md-6 login-form">
-                    <h3>Вход</h3>
-                    <form>
+                    <h3>Выполните вход</h3>
+                    <form method="post">
+                        {% csrf_token %}
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                            <input type="text" class="form-control" placeholder="Email/Имя пользователя" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                            <input type="password" class="form-control" placeholder="Пароль" value="" />
                         </div>
-                        <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" />
-                        </div>
-                        <div class="form-group">
-                            <a href="#" class="ForgetPwd">Forget Password?</a>
+                        <div class="form-group text-center">
+                            <input type="submit" class="btnSubmit" value="Вход" />
                         </div>
                     </form>
                 </div>
